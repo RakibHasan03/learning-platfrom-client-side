@@ -15,7 +15,7 @@ const Header = () => {
                         className="inline-flex items-center"
                     >
                         <img src={navLogo} className='w-12' alt="" />
-                        <span className="ml-2 text-lg font-bold tracking-wide text-gray-100">
+                        <span className="ml-2 text-lg font-semibold tracking-wide text-gray-100">
                             Learn With Programming
                         </span>
                     </NavLink>

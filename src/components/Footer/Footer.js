@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -74,47 +75,43 @@ const Footer = () => {
                     >
                         <ul className="flex flex-wrap justify-center gap-6 text-sm font-bold">
                             <li>
-                                <a
+                                <Link
                                     className="text-gray-900 transition hover:text-gray-900/75"
-                                    href="/"
-                                    target="_blank"
+                                    to='/'
                                     rel="noreferrer"
                                 >
                                     Website
-                                </a>
+                                </Link>
                             </li>
 
                             <li>
-                                <a
+                                <Link
                                     className="text-gray-900 transition hover:text-gray-900/75"
-                                    href="/"
-                                    target="_blank"
+                                    to='/register'
                                     rel="noreferrer"
                                 >
-                                    Uses
-                                </a>
+                                    User
+                                </Link>
                             </li>
 
                             <li>
-                                <a
+                                <Link
                                     className="text-gray-900 transition hover:text-gray-900/75"
-                                    href="/"
-                                    target="_blank"
+                                    to='/blog'
                                     rel="noreferrer"
                                 >
                                     Blog
-                                </a>
+                                </Link>
                             </li>
 
                             <li>
-                                <a
+                                <Link
                                     className="text-gray-900 transition hover:text-gray-900/75"
-                                    href="/"
-                                    target="_blank"
+                                    to='/faq'
                                     rel="noreferrer"
                                 >
                                     FAQ
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </nav>
