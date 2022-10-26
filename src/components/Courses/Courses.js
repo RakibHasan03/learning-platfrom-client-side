@@ -5,10 +5,10 @@ import LeftSide from './LeftSide';
 
 const Courses = () => {
     const courses = useLoaderData();
-    console.log(courses)
+    // console.log(courses)
     return (
-        <div className="grid  grid-cols-1 lg:grid-cols-4 w-11/12 mx-auto py-6">
-            <div className="col-span-1">
+        <div className="grid  grid-cols-1 lg:grid-cols-4 w-11/12 mx-auto my-10">
+            <div className="col-span-1 mb-6">
                 {
                     courses.map((course, index) => <LeftSide
                         course={course}
@@ -17,7 +17,7 @@ const Courses = () => {
                     </LeftSide>)
                }
                 </div>
-            <div className="col-span-3  flex justify-center">
+            <div className="col-span-3  flex justify-center ">
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
 
