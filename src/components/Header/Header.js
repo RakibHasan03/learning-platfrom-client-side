@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import navLogo from '../../Images/nav-logo.png'
+import { AuthContext } from '../../UserContext/AuthProvider';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, logOut } = useContext(AuthContext)
+    const logOutHandler = () => {
+        logOut()
+            .then(() => {
+                console.log('log out successFully')
+            })
+            .catch(() => {
+
+            })
+    }
     return (
         <div className="bg-violet-500 sticky top-0 z-50">
             <div className="px-4 py-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -60,27 +71,44 @@ const Header = () => {
                                 Blog
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink
-                                to='/login'
-                                aria-label="login"
-                                title="login"
-                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Login
-                            </NavLink>
-                        </li>
+                        {
+                            user?.uid ?
+                                <>
+                                    <li>
+                                        <button onClick={logOutHandler}> Log Out</button>
+                                    </li>
+                                    <li>
+                                       
+                                        <img src={user?.photoURL}
+                                        className='rounded-full h-12' alt="" />
+                                    </li>
+                                </>
+                                :
+                                <>
+                                    <li>
+                                        <NavLink
+                                            to='/login'
+                                            aria-label="login"
+                                            title="login"
+                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                        >
+                                            Login
+                                        </NavLink>
+                                    </li>
+
+                                    <li>
+                                        <NavLink
+                                            to='/register'
+                                            aria-label="register"
+                                            title="register"
+                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                        >
+                                            Register
+                                        </NavLink>
+                                    </li>
+                                </>
+                        }
                         
-                        <li>
-                            <NavLink
-                                to='/register'
-                                aria-label="register"
-                                title="register"
-                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Register
-                            </NavLink>
-                        </li>
                      
                        
                        

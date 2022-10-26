@@ -85,7 +85,7 @@ const Register = () => {
                         </div>
                         <button
                             disabled={!accepted}
-                            className="block w-full p-3 text-center rounded-sm dark:text-gray-900 bg-white hover:bg-violet-300">Register</button>
+                            className="block w-full p-3 text-center rounded-sm dark:text-gray-900 bg-white hover:bg-violet-300 disabled:bg-gray-600 hover:disabled:text-white">Register</button>
                     </form>
                    
 
