@@ -48,7 +48,7 @@ const DetailsPage = () => {
                 </div>
                 <div className='mt-2'>
                     <Link to='/checkout'>
-                        <button className="bg-blue-800 hover:bg-purple-700 text-white font-bold py-2  px-10 rounded-2xl  flex items-center justify-between ">Get Premium <FaShieldAlt className='ml-2' /> </button>
+                        <button className="bg-blue-800 hover:bg-purple-700 text-white  py-2  px-10 rounded-2xl  flex items-center justify-between ">Get Premium Access<FaShieldAlt className='ml-2' /> </button>
                     </Link>
                 </div>
                 <div className='mt-3'>
@@ -78,7 +78,7 @@ const DetailsPage = () => {
                 <div className="flex flex-col max-w-lg p-3 space-y-6 overflow-hidden rounded-lg shadow-xl dark:bg-indigo-200 dark:text-gray-800 md:min-h-screen">
                     <div>
                         <img src={ image_url} alt="" className="object-cover w-full mb-4 h-52 sm:h-52 dark:bg-gray-500" />
-                        <h4 className="text-lg dark:text-gray-800 font-semibold">Course Out Line:</h4>
+                        <h4 className="text-lg dark:text-gray-800 font-semibold">Course Outline:</h4>
                         <ul className='pl-5'>
                             {
                                 learning_point.map((point, index) => <li

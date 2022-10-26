@@ -5,7 +5,7 @@ const LeftSide = ({ course }) => {
     const {name, id} = course
     return (
 
-        <ul className="w-11/12 mt-3 mx-auto text-sm font-medium text-gray-900 bg-white rounded-lg  dark:bg-violet-500  dark:text-white">
+        <ul className="md:w-11/12 w-11/12  mt-3 mx-auto text-sm font-medium text-gray-900 bg-white rounded-lg  dark:bg-violet-500  dark:text-white">
             <li className="p-2 px-4 w-full rounded-lg   hover:bg-blue-800"><Link
                 to={`/course/${id}`}>
                 <div className='flex '>
