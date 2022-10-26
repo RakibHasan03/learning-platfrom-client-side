@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../UserContext/AuthProvider';
+
 
 
 const Login = () => {
+    const [error, setError] = useState('')
+    const { signIn, setLoading } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const submitHandler = (event) => {
         event.preventDefault()
@@ -10,6 +18,30 @@ const Login = () => {
         const email = form.email.value; 
         const password = form.password.value;
         console.log(email, password)
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                form.reset()
+                setError('')
+                if (user.emailVerified) {
+                    navigate(from, { replace: true })
+                }
+                else {
+                    toast.error('your email is not verified, please verify email')
+                }
+
+
+            })
+            .catch(error => {
+                // console.error(error)
+                setError(error.message)
+            })
+            .finally(() => {
+                setLoading(false)
+
+            })
+        
 
     }
     return (
@@ -25,8 +57,8 @@ const Login = () => {
                         <div className="space-y-1 text-sm">
                             <label htmlFor="password" className="block text-white">Password</label>
                             <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none" required />
-                            <div className="flex justify-center text-xs dark:text-gray-400">
-                                <p></p>
+                            <div className="flex justify-center text-md text-red-700">
+                                <p>{error}</p>
                             </div>
                         </div>
                         <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 bg-white hover:bg-violet-900">Log In</button>
