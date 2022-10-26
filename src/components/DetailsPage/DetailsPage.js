@@ -1,12 +1,12 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { FaDownload, FaStar, FaStarHalfAlt, FaShieldAlt } from 'react-icons/fa';
 
 const DetailsPage = () => {
     window.scrollTo(0, 0);
 
     const details = useLoaderData();
-    console.log(details)
+    // console.log(details)
     const { name, image_url, sub_title, created,  price, rating, description, completed } = details
     const { des_title, content, Requirements, learning_point  } = description
     
@@ -47,7 +47,9 @@ const DetailsPage = () => {
                     </div>
                 </div>
                 <div className='mt-2'>
-                    <button className="bg-blue-800 hover:bg-purple-700 text-white font-bold py-2  px-10 rounded-2xl  flex items-center justify-between ">Get Premium <FaShieldAlt className='ml-2'/> </button>
+                    <Link to='/checkout'>
+                        <button className="bg-blue-800 hover:bg-purple-700 text-white font-bold py-2  px-10 rounded-2xl  flex items-center justify-between ">Get Premium <FaShieldAlt className='ml-2' /> </button>
+                    </Link>
                 </div>
                 <div className='mt-3'>
                     <h3 className='text-lg font-semibold'>Requirements:</h3>
