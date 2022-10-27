@@ -66,7 +66,7 @@ const Login = () => {
         
     }
     return (
-        <div className='w-11/12 mx-auto mt-10'>
+        <div className='w-11/12 mx-auto mt-10' data-aos="fade-up" data-aos-duration='2000'>
             <div className='flex justify-center'>
                 <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-violet-500 dark:text-gray-100">
                     <h1 className="text-2xl font-bold text-center">Login</h1>

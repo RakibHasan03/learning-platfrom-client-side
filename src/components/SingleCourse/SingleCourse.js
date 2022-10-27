@@ -7,7 +7,7 @@ const SingleCourse = ({ course }) => {
     const { name, image_url, price, rating, id } =course
     return (
         <div className=''>
-            <div className="lg:w-11/12  h-[23rem] mx-auto bg-white rounded-lg shadow-md dark:bg-violet-500 shadow-md dark:border-gray-700 my-3">
+            <div className="lg:w-11/12  h-[23rem] mx-auto bg-white rounded-lg shadow-md dark:bg-violet-500 shadow-md dark:border-gray-700 my-3" >
                 
                 <div>
                     <img className="p-4 rounded-lg h-44 w-full" src={image_url} alt="" />

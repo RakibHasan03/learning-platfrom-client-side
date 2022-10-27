@@ -10,7 +10,7 @@ const Home = () => {
    
     return (
         <div>
-            <div className="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0">
+            <div className="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0" data-aos="fade-left" data-aos-duration='2000'>
                 <div className="flex flex-col items-start w-11/12 md:w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">
                     <div className="mb-16 lg:my-20 lg:max-w-lg lg:pr-5">
                         <div className="max-w-xl mb-6">

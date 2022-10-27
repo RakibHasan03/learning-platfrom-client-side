@@ -3,7 +3,7 @@ import React from 'react';
 const Blog = () => {
     return (
         <div>
-            <section className="dark:bg-violet-500 dark:text-gray-100 w-11/12 mx-auto mt-8">
+            <section className="dark:bg-violet-500 dark:text-gray-100 w-11/12 mx-auto mt-8" data-aos="flip-right" data-aos-duration='2000'>
                 <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
                     <h2 className="text-2xl font-semibold sm:text-4xl text-center mb-3">Question To Answer Section</h2>
                     

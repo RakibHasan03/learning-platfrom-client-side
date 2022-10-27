@@ -20,7 +20,7 @@ const DetailsPage = () => {
     })
     
     return (
-        <div className="grid  grid-cols-1 lg:grid-cols-6 w-11/12 mx-auto my-10  dark:bg-indigo-200 rounded-md pb-1" ref={componentRef}>
+        <div className="grid  grid-cols-1 lg:grid-cols-6 w-11/12 mx-auto my-10  dark:bg-indigo-200 rounded-md pb-1" ref={componentRef} data-aos="fade-right" data-aos-duration='2000'>
 
             <div className="col-span-4 lg:p-8 p-4">
                 <div className='flex justify-between items-center'>

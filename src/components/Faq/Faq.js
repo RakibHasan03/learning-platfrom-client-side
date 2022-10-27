@@ -1,9 +1,10 @@
 import React from 'react';
 
 const Faq = () => {
+    window.scrollTo(0, 0);
     return (
-        <section className="bg-indigo-300 dark:text-gray-800 w-11/12 mx-auto mt-8 rounded-lg shadow-lg">
-            <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
+        <section className="bg-indigo-300 dark:text-gray-800 w-11/12 mx-auto mt-8 rounded-lg shadow-lg" >
+            <div className="container flex flex-col justify-center p-4 mx-auto md:p-8" data-aos="fade-down" data-aos-duration='1500'>
                 <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-4xl">Frequently Asked Questions</h2>
                 <div className="grid gap-10 md:gap-8 sm:p-3 md:grid-cols-2 lg:px-12 xl:px-32">
                     <div>

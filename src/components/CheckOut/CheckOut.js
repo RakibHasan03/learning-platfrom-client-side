@@ -13,7 +13,7 @@ const CheckOut = () => {
 
     return (
         <div className='w-11/12 mx-auto'>
-            <div className="grid md:grid-cols-2 grid-cols-1 bg-indigo-300 rounded-lg mt-10 py-5">
+            <div className="grid md:grid-cols-2 grid-cols-1 bg-indigo-300 rounded-lg mt-10 py-5" data-aos="fade-left" data-aos-duration='1500'>
                 <div className='flex justify-center'>
                     <div>
                         <div className="flex flex-col items max-w-lg p-6 space-y-6 overflow-hidden rounded-lg bg-indigo-300 dark:text-gray-800">
