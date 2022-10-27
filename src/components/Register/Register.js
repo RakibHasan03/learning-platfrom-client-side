@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../UserContext/AuthProvider';
 
 const Register = () => {
     const [error, setError] = useState("")
     const [accepted, setAccepted] = useState(false)
-    const { createAccount, updateUserProfile, verifyEmail } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const { createAccount, updateUserProfile } = useContext(AuthContext)
     const submitHandler = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -22,8 +23,8 @@ const Register = () => {
                 form.reset()
                 setError('')
                 handelUpdateProfile(name, photoURL)
-                handelEmailVerification()
-                toast.success('Please verify your email');
+                toast.success('You are SuccessFully Sign Up');
+                navigate('/')
                 
             })
             .catch(error => {
@@ -43,12 +44,7 @@ const Register = () => {
             .then(() => { })
             .catch(error => console.error(error))
     }
-    const handelEmailVerification = () => {
-        verifyEmail()
-            .then(() => { })
-            .catch(error => console.error(error))
 
-    }
     const handelChecked = (event) => {
         setAccepted(event.target.checked)
 
@@ -62,11 +58,11 @@ const Register = () => {
                     <form onSubmit={submitHandler}  className="space-y-6 ng-untouched ng-pristine ng-valid">
                         <div className="space-y-1 text-sm">
                             <label htmlFor="username" className="block text-white">Full Name</label>
-                            <input type="text" name="name" id="name" placeholder="your name" className="w-full px-4 py-3 rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none " />
+                            <input type="text" name="name" id="name" placeholder="your name" className="w-full px-4 py-3 rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none " required />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="username" className="block text-white">Photo URL</label>
-                            <input type="text" name="photoURL" id="photoUrl" placeholder="Photo URL" className="w-full px-4 py-3 rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none " />
+                            <input type="text" name="photoURL" id="photoUrl" placeholder="Photo URL" className="w-full px-4 py-3 rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none " required />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="username" className="block text-white">Email</label>

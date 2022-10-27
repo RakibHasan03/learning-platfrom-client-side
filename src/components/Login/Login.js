@@ -1,6 +1,6 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import toast from 'react-hot-toast';
+
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../UserContext/AuthProvider';
 
@@ -8,7 +8,7 @@ import { AuthContext } from '../../UserContext/AuthProvider';
 
 const Login = () => {
     const [error, setError] = useState('')
-    const { signIn, providerLoginPop, setLoading, verifyEmail } = useContext(AuthContext)
+    const { signIn, providerLoginPop} = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation();
     const googleProvider = new GoogleAuthProvider();
@@ -27,21 +27,13 @@ const Login = () => {
                 console.log(user)
                 form.reset()
                 setError('')
-                if (user.emailVerified) {
-                    navigate(from, { replace: true })
-                }
-                else {
-                    toast.error('your email is not verified, please verify email')
-                }
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 // console.error(error)
                 setError(error.message)
             })
-            .finally(() => {
-                setLoading(false)
-
-            })      
+               
 
     }
     const googleHandler = () => {
@@ -62,7 +54,6 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 console.log(user)
-                verifyEmail()
                 setError('')
                 navigate(from, { replace: true })
             })
