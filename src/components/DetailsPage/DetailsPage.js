@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { useReactToPrint } from 'react-to-print';
 import { FaDownload, FaStar, FaStarHalfAlt, FaShieldAlt } from 'react-icons/fa';
 
 const DetailsPage = () => {
@@ -7,18 +8,27 @@ const DetailsPage = () => {
 
     const details = useLoaderData();
     // console.log(details)
-    const { name, image_url, sub_title, created,  price, rating, description, completed } = details
-    const { des_title, content, Requirements, learning_point  } = description
+    const { name, image_url, sub_title, created,  price, rating, description, completed, id } = details
+    const { des_title, content, Requirements, learning_point } = description
+
+
+    const componentRef = useRef();
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+        documentTitle: 'course-details',
+        
+    })
     
     return (
-        <div className="grid  grid-cols-1 lg:grid-cols-6 w-11/12 mx-auto my-10  dark:bg-indigo-200 rounded-md pb-1">
+        <div className="grid  grid-cols-1 lg:grid-cols-6 w-11/12 mx-auto my-10  dark:bg-indigo-200 rounded-md pb-1" ref={componentRef}>
+
             <div className="col-span-4 lg:p-8 p-4">
                 <div className='flex justify-between items-center'>
                     <div>
                         <h2 className='text-xl font-semibold'>{ name}</h2>
                     </div>
                     <div>
-                        <button className='p-4'><FaDownload className='text-2xl hover:text-blue-700'/></button>
+                        <button onClick={handlePrint} className='p-4'><FaDownload className='text-2xl hover:text-blue-700'/></button>
                     </div>
                 </div>
                 <h4 className='text-md font-semibold'>{sub_title}</h4>
@@ -47,7 +57,7 @@ const DetailsPage = () => {
                     </div>
                 </div>
                 <div className='mt-2'>
-                    <Link to='/checkout'>
+                    <Link to={`/checkout/${id}`}>
                         <button className="bg-blue-800 hover:bg-purple-700 text-white  py-2  px-10 rounded-2xl  flex items-center justify-between ">Get Premium Access<FaShieldAlt className='ml-2' /> </button>
                     </Link>
                 </div>

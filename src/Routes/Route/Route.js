@@ -40,7 +40,10 @@ export const router = createBrowserRouter([
                 element: <DetailsPage></DetailsPage>
             },
             {
-                path: '/checkout',
+                path: '/checkout/:id',
+                loader: ({ params }) => {
+                    return fetch(`https://learn-with-rakib-server-mrmerndeveloper.vercel.app/courses/${params.id}`)
+                },
                 element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
             },
             {

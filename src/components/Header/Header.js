@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import navLogo from '../../Images/nav-logo.png'
 import { AuthContext } from '../../UserContext/AuthProvider';
+import { FaUserAlt } from 'react-icons/fa';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,7 +34,7 @@ const Header = () => {
                     <ul className="flex items-center hidden space-x-6 lg:flex">
                         <li>
                             <NavLink
-                               to='/home'
+                                to='/home'
                                 aria-label="Home"
                                 title="Home"
                                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
@@ -75,12 +76,8 @@ const Header = () => {
                             user?.uid ?
                                 <>
                                     <li>
-                                        <button onClick={logOutHandler}> Log Out</button>
-                                    </li>
-                                    <li>
-                                       
-                                        <img src={user?.photoURL}
-                                        className='rounded-full h-12' alt="" />
+                                        <button onClick={logOutHandler}
+                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"> Log Out</button>
                                     </li>
                                 </>
                                 :
@@ -108,10 +105,25 @@ const Header = () => {
                                     </li>
                                 </>
                         }
-                        
-                     
-                       
-                       
+
+                        {
+                            user?.uid ?
+                                <>  <li>
+
+                                    <img src={user?.photoURL}
+                                        title={user?.displayName}
+                                        className='rounded-full h-10 w-10' alt="" />
+                                </li></>
+                                :
+                                <>
+                                    <FaUserAlt
+                                        title='Your Profile'
+                                        className='text-2xl' />
+                                </>
+                        }
+
+
+
                     </ul>
                     <div className="lg:hidden">
                         <button
@@ -137,7 +149,7 @@ const Header = () => {
                         </button>
                         {isMenuOpen && (
                             <div className="absolute top-0 left-0 w-full">
-                                <div className="p-5 bg-white border rounded shadow-sm">
+                                <div className="p-5 bg-indigo-300 border rounded shadow-sm">
                                     <div className="flex items-center justify-between mb-4">
                                         <div>
                                             <NavLink
@@ -147,7 +159,7 @@ const Header = () => {
                                                 className="inline-flex items-center"
                                             >
                                                 <img src={navLogo} className='w-12' alt="" />
-                                                <span className="ml-2 text-md font-bold tracking-wide text-gray-600">
+                                                <span className="ml-2 text-md font-bold tracking-wide text-gray-800">
                                                     Learn With Programming
                                                 </span>
                                             </NavLink>
@@ -175,7 +187,7 @@ const Header = () => {
                                                     to='/home'
                                                     aria-label="Home"
                                                     title="Home"
-                                                    className="font-medium tracking-wide text-gray-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                                    className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
                                                 >
                                                     Home
                                                 </NavLink>
@@ -185,37 +197,18 @@ const Header = () => {
                                                     to='/courses'
                                                     aria-label="Courses"
                                                     title="Courses"
-                                                    className="font-medium tracking-wide text-gray-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                                    className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
                                                 >
                                                     Courses
                                                 </NavLink>
                                             </li>
-                                            <li>
-                                                <NavLink
-                                                    to='/login'
-                                                    aria-label="login"
-                                                    title="login"
-                                                    className="font-medium tracking-wide text-gray-600 transition-colors duration-200 hover:text-teal-accent-400"
-                                                >
-                                                    Log In
-                                                </NavLink>
-                                            </li>
-                                           <li>
-                            <NavLink
-                                to='/register'
-                                aria-label="Register"
-                                title="Register"
-                                className="font-medium tracking-wide text-gray-600 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                               Register
-                            </NavLink>
-                        </li>
+
                                             <li>
                                                 <NavLink
                                                     to='/faq'
                                                     aria-label="FAQ"
                                                     title="FAQ"
-                                                    className="font-medium tracking-wide text-gray-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                                    className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
                                                 >
                                                     FAQ
                                                 </NavLink>
@@ -225,11 +218,61 @@ const Header = () => {
                                                     to='/blog'
                                                     aria-label="Blog"
                                                     title="Blog"
-                                                    className="font-medium tracking-wide text-gray-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                                    className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
                                                 >
                                                     Blog
                                                 </NavLink>
-                                            </li>      
+                                            </li>
+                                            {
+                                                user?.uid ?
+                                                    <>
+                                                        <li>
+                                                            <button onClick={logOutHandler}
+                                                                className='bg-violet-700 hover:bg-blue-800 text-gray-800  py-1 px-3 border border-violet-700 rounded-lg'> Log Out</button>
+                                                        </li>
+
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <li>
+                                                            <NavLink
+                                                                to='/login'
+                                                                aria-label="login"
+                                                                title="login"
+                                                                className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
+                                                            >
+                                                                Login
+                                                            </NavLink>
+                                                        </li>
+
+                                                        <li>
+                                                            <NavLink
+                                                                to='/register'
+                                                                aria-label="register"
+                                                                title="register"
+                                                                className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
+                                                            >
+                                                                Register
+                                                            </NavLink>
+                                                        </li>
+                                                    </>
+                                            }
+                                            {
+                                                user?.uid ?
+                                                    <>  <li>
+
+                                                        <img src={user?.photoURL}
+                                                            title={user?.displayName}
+                                                            className='rounded-full h-10 w-10' alt="" />
+                                                    </li></>
+                                                    :
+                                                    <>
+                                                        <FaUserAlt
+                                                            title='Your Profile'
+                                                            className='text-2xl' />
+                                                    </>
+                                            }
+
                                         </ul>
                                     </nav>
                                 </div>
