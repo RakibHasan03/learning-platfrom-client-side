@@ -60,15 +60,15 @@ const Register = () => {
                     <form onSubmit={submitHandler}  className="space-y-6 ng-untouched ng-pristine ng-valid">
                         <div className="space-y-1 text-sm">
                             <label htmlFor="username" className="block text-white">Full Name</label>
-                            <input type="text" name="name" id="name" placeholder="your name" className="w-full px-4 py-3 rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none " required />
+                            <input type="text" name="name" id="name" placeholder="your name" className="w-full px-4 py-3 shadow-xl rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none " required />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="username" className="block text-white">Photo URL</label>
-                            <input type="text" name="photoURL" id="photoUrl" placeholder="Photo URL" className="w-full px-4 py-3 rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none " required />
+                            <input type="text" name="photoURL" id="photoUrl" placeholder="Photo URL" className="w-full shadow-xl px-4 py-3 rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none " required />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="username" className="block text-white">Email</label>
-                            <input type="email" name="email" id="username" placeholder="your email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none " required />
+                            <input type="email" name="email" id="username" placeholder="your email" className="w-full shadow-xl px-4 py-3 rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none " required />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="password" className="block text-white">Password</label>
@@ -83,7 +83,7 @@ const Register = () => {
                         </div>
                         <button
                             disabled={!accepted}
-                            className="block w-full p-3 text-center rounded-sm dark:text-gray-900 bg-white hover:bg-violet-300 disabled:bg-gray-600 hover:disabled:text-white">Register</button>
+                            className="block shadow-md w-full p-3 text-center rounded-sm dark:text-gray-900 bg-white hover:bg-violet-300 disabled:bg-gray-600 hover:disabled:text-white">Register</button>
                     </form>
                    
 

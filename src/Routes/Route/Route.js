@@ -65,7 +65,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/con',
-                element: <Congratulation></Congratulation>
+                element: <PrivateRoute> <Congratulation></Congratulation></PrivateRoute>
             }
         ]
         

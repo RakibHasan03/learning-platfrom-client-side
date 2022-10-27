@@ -27,7 +27,7 @@ const Header = () => {
                         className="inline-flex items-center"
                     >
                         <img src={navLogo} className='w-12' alt="" />
-                        <span className="ml-2 text-md md:text-lg  tracking-wide text-gray-100">
+                        <span className="ml-2 text-md md:text-lg  tracking-wide text-gray-100 hover:text-blue-900">
                             Learn With Programming
                         </span>
                     </NavLink>
@@ -37,7 +37,7 @@ const Header = () => {
                                 to='/home'
                                 aria-label="Home"
                                 title="Home"
-                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400 hover:text-blue-900"
                             >
                                 Home
                             </NavLink>
@@ -47,7 +47,7 @@ const Header = () => {
                                 to='/courses'
                                 aria-label="courses"
                                 title="courses"
-                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400 hover:text-blue-900"
                             >
                                 Courses
                             </NavLink>
@@ -57,7 +57,7 @@ const Header = () => {
                                 to='/faq'
                                 aria-label="FAQ"
                                 title="FAQ"
-                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400 hover:text-blue-900"
                             >
                                 FAQ
                             </NavLink>
@@ -67,7 +67,7 @@ const Header = () => {
                                 to='/blog'
                                 aria-label="Blog"
                                 title="Blog"
-                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400 hover:text-blue-900"
                             >
                                 Blog
                             </NavLink>
@@ -77,7 +77,7 @@ const Header = () => {
                                 <>
                                     <li>
                                         <button onClick={logOutHandler}
-                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"> Log Out</button>
+                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400 hover:text-blue-900"> Log Out</button>
                                     </li>
                                 </>
                                 :
@@ -87,7 +87,7 @@ const Header = () => {
                                             to='/login'
                                             aria-label="login"
                                             title="login"
-                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400 hover:text-blue-900"
                                         >
                                             Login
                                         </NavLink>
@@ -98,7 +98,7 @@ const Header = () => {
                                             to='/register'
                                             aria-label="register"
                                             title="register"
-                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400 hover:text-blue-900"
                                         >
                                             Register
                                         </NavLink>
@@ -173,7 +173,7 @@ const Header = () => {
                                                 className="inline-flex items-center"
                                             >
                                                 <img src={navLogo} className='w-12' alt="" />
-                                                <span className="ml-2 text-md font-bold tracking-wide text-gray-800">
+                                                <span className="ml-2 text-md font-bold tracking-wide text-gray-800 hover:text-blue-900">
                                                     Learn With Programming
                                                 </span>
                                             </NavLink>
@@ -201,7 +201,7 @@ const Header = () => {
                                                     to='/home'
                                                     aria-label="Home"
                                                     title="Home"
-                                                    className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
+                                                    className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400 hover:text-blue-900"
                                                 >
                                                     Home
                                                 </NavLink>
@@ -211,7 +211,7 @@ const Header = () => {
                                                     to='/courses'
                                                     aria-label="Courses"
                                                     title="Courses"
-                                                    className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
+                                                    className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400 hover:text-blue-900"
                                                 >
                                                     Courses
                                                 </NavLink>
@@ -222,7 +222,7 @@ const Header = () => {
                                                     to='/faq'
                                                     aria-label="FAQ"
                                                     title="FAQ"
-                                                    className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
+                                                    className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400 hover:text-blue-900"
                                                 >
                                                     FAQ
                                                 </NavLink>
@@ -232,7 +232,7 @@ const Header = () => {
                                                     to='/blog'
                                                     aria-label="Blog"
                                                     title="Blog"
-                                                    className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
+                                                    className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400 hover:text-blue-900"
                                                 >
                                                     Blog
                                                 </NavLink>
@@ -242,7 +242,7 @@ const Header = () => {
                                                     <>
                                                         <li>
                                                             <button onClick={logOutHandler}
-                                                                className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"> Log Out</button>
+                                                                className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400 hover:text-blue-900"> Log Out</button>
                                                         </li>
 
                                                     </>
@@ -253,7 +253,7 @@ const Header = () => {
                                                                 to='/login'
                                                                 aria-label="login"
                                                                 title="login"
-                                                                className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
+                                                                className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400 hover:text-blue-900"
                                                             >
                                                                 Login
                                                             </NavLink>
@@ -264,7 +264,7 @@ const Header = () => {
                                                                 to='/register'
                                                                 aria-label="register"
                                                                 title="register"
-                                                                className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
+                                                                className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400 hover:text-blue-900"
                                                             >
                                                                 Register
                                                             </NavLink>

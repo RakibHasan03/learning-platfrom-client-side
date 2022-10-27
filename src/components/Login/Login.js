@@ -73,16 +73,16 @@ const Login = () => {
                     <form onSubmit={submitHandler}  className="space-y-6 ng-untouched ng-pristine ng-valid">
                         <div className="space-y-1 text-sm">
                             <label htmlFor="username" className="block text-white">Email</label>
-                            <input type="email" name="email" id="username" placeholder="your email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none " required />
+                            <input type="email" name="email" id="username" placeholder="your email" className="w-full shadow-xl px-4 py-3 rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none " required />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="password" className="block text-white">Password</label>
-                            <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none" required />
+                            <input type="password" name="password" id="password" placeholder="Password" className="w-full shadow-xl px-4 py-3 rounded-md dark:border-gray-700 bg-white dark:text-gray-700 focus:outline-none" required />
                             <div className="flex justify-center text-md text-red-700">
                                 <p>{error}</p>
                             </div>
                         </div>
-                        <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 bg-white hover:bg-violet-900">Log In</button>
+                        <button className="block w-full shadow-xl p-3 text-center rounded-md dark:text-gray-900 bg-white hover:bg-violet-900">Log In</button>
                     </form>
                     
                     <div className="flex items-center pt-4 space-x-1">
