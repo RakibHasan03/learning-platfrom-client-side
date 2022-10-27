@@ -27,7 +27,7 @@ const Header = () => {
                         className="inline-flex items-center"
                     >
                         <img src={navLogo} className='w-12' alt="" />
-                        <span className="ml-2 text-lg font-semibold tracking-wide text-gray-100">
+                        <span className="ml-2 text-md md:text-lg  tracking-wide text-gray-100">
                             Learn With Programming
                         </span>
                     </NavLink>
@@ -122,9 +122,23 @@ const Header = () => {
                                 </>
                         }
 
+                       
+
 
 
                     </ul>
+                    <div>
+                        <label htmlFor="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+                            
+                            <span className="relative">
+                                <input id="Toggle1" type="checkbox" className="hidden peer" />
+                                <div className="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-violet-400"></div>
+                                <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-800"></div>
+                            </span>
+                           
+
+                        </label>
+                    </div>
                     <div className="lg:hidden">
                         <button
                             aria-label="Open Menu"
@@ -272,7 +286,8 @@ const Header = () => {
                                                             className='text-2xl' />
                                                     </>
                                             }
-
+                                            
+                                            
                                         </ul>
                                     </nav>
                                 </div>

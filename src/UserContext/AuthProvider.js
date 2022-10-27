@@ -23,9 +23,7 @@ const AuthProvider = ({ children }) => {
     const updateUserProfile = (profile) => {
         return updateProfile(auth.currentUser, profile);
     };
-    const verifyEmail = () => {
-        return sendEmailVerification(auth.currentUser);
-    };
+ 
     const signIn = (email, password) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
@@ -54,11 +52,10 @@ const AuthProvider = ({ children }) => {
         providerLoginPop,
         createAccount,
         updateUserProfile,
-        verifyEmail,
         signIn,
         logOut,
-        loading,
-        setLoading,
+        loading
+        
 
 
     }

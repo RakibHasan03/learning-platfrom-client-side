@@ -1,5 +1,6 @@
 import Blog from "../../components/Blog/Blog";
 import CheckOut from "../../components/CheckOut/CheckOut";
+import Congratulation from "../../components/Congratulation/Congratulation";
 import Courses from "../../components/Courses/Courses";
 import DetailsPage from "../../components/DetailsPage/DetailsPage";
 import ErrorElement from "../../components/ErrorElements/ErrorElement";
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
             {
                 path: '/faq',
                 element:<Faq></Faq>
+            },
+            {
+                path: '/con',
+                element: <Congratulation></Congratulation>
             }
         ]
         
