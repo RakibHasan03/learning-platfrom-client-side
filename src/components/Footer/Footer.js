@@ -116,7 +116,7 @@ const Footer = () => {
                         </ul>
                     </nav>
 
-                    <p className="mx-auto max-w-lg text-xs text-gray-500">
+                    <p className="mx-auto max-w-lg text-xs text-gray-800">
                         This is a tech website for all users . by this website you can easily Learn with programing language. if you are beginner then join with us we will alwyes help you with our best
 
                         <span className="mt-4 block"> &copy; 2022 Learn With Programming</span>

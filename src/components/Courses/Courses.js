@@ -6,6 +6,7 @@ import LeftSide from './LeftSide';
 const Courses = () => {
     const courses = useLoaderData();
     // console.log(courses)
+    window.scrollTo(0, 0);
     return (
         <div className="grid  grid-cols-1 lg:grid-cols-4 w-11/12 md:w-full mx-auto  my-10 md:my-0">
             <div className="col-span-1 p-4 shadow-2xl md:bg-indigo-300  rounded-r-lg">

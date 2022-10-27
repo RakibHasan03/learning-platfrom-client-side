@@ -242,7 +242,7 @@ const Header = () => {
                                                     <>
                                                         <li>
                                                             <button onClick={logOutHandler}
-                                                                className='bg-violet-700 hover:bg-blue-800 text-gray-800  py-1 px-3 border border-violet-700 rounded-lg'> Log Out</button>
+                                                                className="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"> Log Out</button>
                                                         </li>
 
                                                     </>

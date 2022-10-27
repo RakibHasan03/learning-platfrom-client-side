@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../UserContext/AuthProvider';
 
@@ -7,6 +7,8 @@ const Register = () => {
     const [error, setError] = useState("")
     const [accepted, setAccepted] = useState(false)
     const navigate = useNavigate()
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
     const { createAccount, updateUserProfile } = useContext(AuthContext)
     const submitHandler = (event) => {
         event.preventDefault();
@@ -24,7 +26,7 @@ const Register = () => {
                 setError('')
                 handelUpdateProfile(name, photoURL)
                 toast.success('You are SuccessFully Sign Up');
-                navigate('/')
+                navigate(from, { replace: true })
                 
             })
             .catch(error => {
