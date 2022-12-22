@@ -30,7 +30,6 @@ export const router = createBrowserRouter([
         },
             {
                 path: '/courses',
-                loader: () => fetch('https://learn-with-rakib-server-mrmerndeveloper.vercel.app/courses'),
                 element:<Courses></Courses>
             },
             {

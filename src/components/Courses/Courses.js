@@ -1,12 +1,29 @@
+// import { useQuery } from '@tanstack/react-query';
+import { useQuery } from 'react-query';
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 import SingleCourse from '../SingleCourse/SingleCourse';
 import LeftSide from './LeftSide';
 
 const Courses = () => {
-    const courses = useLoaderData();
+    // const courses = useLoaderData();
     // console.log(courses)
     window.scrollTo(0, 0);
+
+    const url = 'https://learn-with-rakib-server-mrmerndeveloper.vercel.app/courses'
+    const { data: courses = [], isLoading,  } = useQuery({
+        queryKey: ['courses',],
+        queryFn: async () => {
+            const res = await fetch(url);
+            const data = await res.json();
+            return data;
+        }
+
+    })
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <div className="grid  grid-cols-1 lg:grid-cols-4 w-11/12 md:w-full mx-auto  my-10 md:my-0">
             <div className="col-span-1 p-4 shadow-2xl md:bg-indigo-300  rounded-r-lg">

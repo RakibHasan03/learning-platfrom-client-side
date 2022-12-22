@@ -1,16 +1,17 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../UserContext/AuthProvider';
 
 
 
 const Login = () => {
+    // useTitle('Login');
     const [error, setError] = useState('')
     const { signIn, providerLoginPop} = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation();
+ 
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const from = location.state?.from?.pathname || '/';

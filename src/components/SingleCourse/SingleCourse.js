@@ -15,7 +15,7 @@ const SingleCourse = ({ course }) => {
                 
                 <div className="px-5 pb-5">
                     
-                    <h5 className="text-lg tracking-tight text-gray-900 dark:text-white">{name}</h5>
+                    <h5 className="text-lg tracking-tight text-b">{name}</h5>
                   
                     <div className="flex items-center mt-2.5 mb-5 flex justify-between">
                         <span className='flex'><FaStar className='text-yellow-400' />
